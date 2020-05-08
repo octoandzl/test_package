@@ -4,12 +4,12 @@ language: python
 virtualenv:
   system_site_packages: true
 python:
-  - "3.5"
+  - "3.6"
 install:
 - pip install -r requirements.txt
 script:
 - pytest
-- coverage run test/test_arithmetic_test.py
+- coverage run test/test_arithmetictest.py
 after_success: coveralls
 after_script: cd ~
 deploy:

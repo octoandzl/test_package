@@ -2,22 +2,22 @@ from pytest import fixture
 
 @fixture
 def add():
-    from arithmetic_test import add
+    from arithmetictest import add
     return add
 
 @fixture
 def substract():
-    from arithmetic_test import subtract
+    from arithmetictest import subtract
     return subtract
 
 @fixture
 def multiply():
-    from arithmetic_test import multiply
+    from arithmetictest import multiply
     return multiply
 
 @fixture
 def division():
-    from arithmetic_test import division
+    from arithmetictest import division
     return division
 
 def test_add(add):
