@@ -18,7 +18,7 @@ script:
 after_success: coveralls
 after_script: cd ~
 deploy:
-  provider: testpypi
+  provider: pypi
   user: Andzl
   password:
     secure: 
