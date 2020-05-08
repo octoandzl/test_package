@@ -1,0 +1,14 @@
+# general things to ignore
+build/
+dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*/__pycache__
+*.so
+*~
+
+# due to using pytest
+.cache
+.pytest_cache/

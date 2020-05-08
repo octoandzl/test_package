@@ -1,0 +1,25 @@
+sudo: required
+#dist: xenial
+language: python
+virtualenv:
+  system_site_packages: true
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "pypy"   # currently Python 2.7.13, PyPy 7.1.1
+  - "pypy3"
+install:
+- pip install -r requirements.txt
+script:
+- pytest
+- coverage run test/test_arithmetic_test.py
+after_success: coveralls
+after_script: cd ~
+deploy:
+  provider: testpypi
+  user: Andzl
+  password:
+    secure: 
+      ffbJjmirV7oEDaiOP0L+tOH+LRzJuqFzOJvXTam6SZAeByB0aWzdKlzvuY1isoIrqtXRut/wwZzdGjHN2ZhrDrd0mUW+I41mXPDM2Sf+hMfZHhjDsYRhHfgK45wYZFHeReyObV3pMMzW8Tdgpb50z5FwMU0NHV19QzpN9sh50CYck9DRGE0BRpypD4qpUdTypG+GdMp8cbCF3fOu10MV6f7fEJC6zvWUzf1Mw+mwSdCR0tYbYu46B0/qQq/vP0uwbqnNld65GRShw/nhLxoRIXTQHseH+oAjq3N07FubuT4saCjDWc7BQomMy8T571xqJ53lXV0QUrEM4kC5xeMWP0aBwJ8E7pKtvdubvlTzLriAiNr1zy9DA5KKQYR84JjrB/pDbKGHdz9+DzYasb/cEE3jRmZsmCeGrqohlh0dNZdTDg/IhcZF3Bt5AnlZwf9bCKdH1ovFY9fdoSsVVqpK5BZS/be0W+shmk8CRJRws9eh+Qa3NPeo2Wn8Ygejq8Z+LARsXPFauo4wYc/hKONxFqHLO5xEDZOVsNcNRajWiV/Rjozjt4YV57+PIlk2uyR//Bxorhzle46hi059tU5dbe7d6WmLebSDOegSXfJ/vKg546jQ8HXWSJv9o+mGPc028WtVrX0o1v83QMBivWMQh2MvZ6o2ud2iSwWxajGt+gI=
